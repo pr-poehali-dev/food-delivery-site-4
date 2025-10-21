@@ -1,8 +1,12 @@
-import { useState } from 'react';
+import { useState, ReactNode } from 'react';
 import { Button } from '@/components/ui/button';
 import Icon from '@/components/ui/icon';
 
-const Header = () => {
+interface HeaderProps {
+  cartComponent?: ReactNode;
+}
+
+const Header = ({ cartComponent }: HeaderProps) => {
   const [isMenuOpen, setIsMenuOpen] = useState(false);
 
   return (
@@ -30,22 +34,23 @@ const Header = () => {
           </nav>
 
           <div className="hidden md:flex items-center gap-4">
-            <Button variant="ghost" size="icon" className="text-white hover:bg-white/20">
-              <Icon name="ShoppingCart" size={24} />
-            </Button>
+            {cartComponent}
             <Button variant="ghost" size="icon" className="text-white hover:bg-white/20">
               <Icon name="User" size={24} />
             </Button>
           </div>
 
-          <Button
-            variant="ghost"
-            size="icon"
-            className="md:hidden text-white hover:bg-white/20"
-            onClick={() => setIsMenuOpen(!isMenuOpen)}
-          >
-            <Icon name={isMenuOpen ? "X" : "Menu"} size={24} />
-          </Button>
+          <div className="md:hidden flex items-center gap-2">
+            {cartComponent}
+            <Button
+              variant="ghost"
+              size="icon"
+              className="text-white hover:bg-white/20"
+              onClick={() => setIsMenuOpen(!isMenuOpen)}
+            >
+              <Icon name={isMenuOpen ? "X" : "Menu"} size={24} />
+            </Button>
+          </div>
         </div>
 
         {isMenuOpen && (

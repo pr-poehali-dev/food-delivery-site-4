@@ -7,6 +7,7 @@ import Icon from '@/components/ui/icon';
 interface FoodCatalogProps {
   selectedCategory: string;
   onCategoryChange: (category: string) => void;
+  onAddToCart: (item: { id: number; name: string; price: number; image: string }) => void;
 }
 
 const categories = [
@@ -75,7 +76,7 @@ const foodItems = [
   },
 ];
 
-const FoodCatalog = ({ selectedCategory, onCategoryChange }: FoodCatalogProps) => {
+const FoodCatalog = ({ selectedCategory, onCategoryChange, onAddToCart }: FoodCatalogProps) => {
   const filteredItems = selectedCategory === 'all' 
     ? foodItems 
     : foodItems.filter(item => item.category === selectedCategory);
@@ -119,7 +120,15 @@ const FoodCatalog = ({ selectedCategory, onCategoryChange }: FoodCatalogProps) =
                 <p className="text-2xl font-bold text-primary">{item.price} ₽</p>
               </CardContent>
               <CardFooter className="p-4 pt-0">
-                <Button className="w-full gap-2">
+                <Button 
+                  className="w-full gap-2"
+                  onClick={() => onAddToCart({ 
+                    id: item.id, 
+                    name: item.name, 
+                    price: item.price, 
+                    image: item.image 
+                  })}
+                >
                   <Icon name="ShoppingCart" size={18} />
                   В корзину
                 </Button>
