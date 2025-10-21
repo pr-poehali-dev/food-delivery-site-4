@@ -120,33 +120,33 @@ export default function Index() {
   const totalPrice = cartItems.reduce((sum, item) => sum + item.price * item.quantity, 0);
 
   return (
-    <div className="min-h-screen bg-gradient-to-b from-orange-50 via-amber-50 to-white">
-      <header className="sticky top-0 z-50 bg-white/95 backdrop-blur-md shadow-md border-b-2 border-primary/20">
+    <div className="min-h-screen bg-gradient-to-br from-pink-50 via-purple-50 to-cyan-50">
+      <header className="sticky top-0 z-50 bg-gradient-to-r from-primary via-secondary to-accent backdrop-blur-md shadow-xl border-b-4 border-white/20">
         <div className="container mx-auto px-4 py-4">
           <div className="flex items-center justify-between">
             <div className="flex items-center gap-3">
-              <div className="bg-gradient-to-br from-primary to-secondary p-2.5 rounded-2xl shadow-lg">
+              <div className="bg-white/20 p-2.5 rounded-2xl shadow-lg backdrop-blur-sm animate-pulse-glow">
                 <Icon name="UtensilsCrossed" size={28} className="text-white" />
               </div>
               <div>
-                <h1 className="text-2xl font-heading font-bold bg-gradient-to-r from-primary via-secondary to-accent bg-clip-text text-transparent">
+                <h1 className="text-2xl font-heading font-bold text-white drop-shadow-lg">
                   FoodExpress
                 </h1>
-                <p className="text-xs text-muted-foreground">Доставка за 30 минут</p>
+                <p className="text-xs text-white/80">Доставка за 30 минут ⚡</p>
               </div>
             </div>
 
             <nav className="hidden md:flex items-center gap-8">
-              <a href="#menu" className="text-foreground hover:text-primary transition-colors font-medium">
+              <a href="#menu" className="text-white hover:text-white/80 transition-colors font-semibold">
                 Меню
               </a>
-              <a href="#about" className="text-foreground hover:text-primary transition-colors font-medium">
+              <a href="#about" className="text-white hover:text-white/80 transition-colors font-semibold">
                 О нас
               </a>
-              <a href="#faq" className="text-foreground hover:text-primary transition-colors font-medium">
+              <a href="#faq" className="text-white hover:text-white/80 transition-colors font-semibold">
                 Вопросы
               </a>
-              <a href="#contact" className="text-foreground hover:text-primary transition-colors font-medium">
+              <a href="#contact" className="text-white hover:text-white/80 transition-colors font-semibold">
                 Контакты
               </a>
             </nav>
