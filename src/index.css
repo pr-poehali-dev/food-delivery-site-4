@@ -125,7 +125,8 @@
 }
 
 @keyframes pulse-glow {
-  0%, 100% {
+  0%,
+  100% {
     box-shadow: 0 0 20px rgba(236, 72, 153, 0.3);
   }
   50% {
@@ -152,5 +153,4 @@
 .scrollbar-hide {
   -ms-overflow-style: none;
   scrollbar-width: none;
-}
 }
